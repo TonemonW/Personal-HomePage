@@ -300,7 +300,7 @@ type projectItems = {
   name: string;
   tags: (
     | { type: "img"; alt: string; value: string } // Image tags
-    | { type: "url"; value: string }            // URL tags
+    | { type: "url" }            // URL tags
   )[];
   details: {
     description: string;
