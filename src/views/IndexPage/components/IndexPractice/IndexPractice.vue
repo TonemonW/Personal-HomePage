@@ -6,16 +6,14 @@ import LeftOrRightArrow from "@/components/LeftOrRightArrow/LeftOrRightArrow.vue
 import titleAndPath from "@/config/TitleAndPath";
 import { debounce } from "lodash";
 
-const practices = ref<
-	{
-		imgPath: string;
-		imgAlt: string;
-		companyName: string;
-		jobName: string;
-		time: string;
-		show: boolean;
-	}[]
->([
+const practices = ref<{
+	imgPath: string;
+	imgAlt: string;
+	companyName: string;
+	jobName: string;
+	time: string;
+	show: boolean;
+}[]>([
 	{
 		imgPath: "/img/knk.jpg",
 		imgAlt: "KNK Dessert Logo",
@@ -33,8 +31,9 @@ const practices = ref<
 		show: true,
 	},
 ]);
-// 实现按钮点击切换逻辑
+
 const index = ref<number>(0);
+
 function changeShow(lor: boolean) {
 	practices.value[index.value].show = false;
 	if (lor) {
@@ -54,7 +53,7 @@ function changeShow(lor: boolean) {
 	}
 	practices.value[index.value].show = true;
 }
-// 根据视口大小初始化展示情况
+
 function initShow() {
 	if (window.innerWidth <= 850) {
 		practices.value.forEach((item, index) => {
@@ -68,12 +67,14 @@ function initShow() {
 		});
 	}
 }
+
 const initShowDe = debounce(initShow, 300);
+
 onMounted(() => {
 	initShow();
-
 	window.addEventListener("resize", initShowDe);
 });
+
 onUnmounted(() => {
 	initShowDe.cancel(); // 取消防抖任务
 	window.removeEventListener("resize", initShowDe);
@@ -83,17 +84,15 @@ onUnmounted(() => {
 <template>
 	<div class="index-practice-container">
 		<PartTitle :title="titleAndPath[3].name" class="media-title" />
-		<LeftOrRightArrow
-			left-or-right="left"
-			class="not-see"
-			style="margin-left: 10px"
-		/>
+
+		<!-- 左侧箭头 -->
+		<LeftOrRightArrow left-or-right="left" class="arrow-btn" @click="changeShow(true)" style="margin-left: 10px" />
+
 		<PracticeList :practices="practices" />
-		<LeftOrRightArrow
-			left-or-right="right"
-			class="not-see"
-			style="margin-right: 10px"
-		/>
+
+		<!-- 右侧箭头 -->
+		<LeftOrRightArrow left-or-right="right" class="arrow-btn" @click="changeShow(false)"
+			style="margin-right: 10px" />
 	</div>
 </template>
 
@@ -102,8 +101,28 @@ onUnmounted(() => {
 	user-select: none;
 }
 
-.not-see {
+.arrow-btn {
+	cursor: pointer;
+	transition: all 0.3s;
 	display: none;
+	/* 默认隐藏箭头 */
+}
+
+/* 小屏幕显示箭头按钮 */
+@media screen and (max-width: 850px) {
+	.arrow-btn {
+		display: block;
+		/* 显示箭头 */
+	}
+
+	.media-title::before {
+		content: "";
+		position: absolute;
+		left: -2vh;
+		width: 8%;
+		height: 100%;
+		background-color: var(--scroll-block-color);
+	}
 }
 
 .index-practice-container {
@@ -114,20 +133,5 @@ onUnmounted(() => {
 	width: 100%;
 	height: 90vh;
 	background-color: transparent;
-}
-
-@media screen and (max-width: 850px) {
-	.media-title::before {
-		content: "";
-		position: absolute;
-		left: -2vh;
-		width: 8%;
-		height: 100%;
-		background-color: var(--scroll-block-color);
-	}
-
-	.not-see {
-		display: block;
-	}
 }
 </style>

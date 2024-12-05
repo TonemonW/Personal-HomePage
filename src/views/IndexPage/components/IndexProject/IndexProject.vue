@@ -2,27 +2,27 @@
 import PartTitle from "@/components/PartTitle/PartTitle.vue";
 import titleAndPath from "@/config/TitleAndPath";
 import useVisible from "@/hooks/useVisible";
-import {ref} from "vue";
+import { ref } from "vue";
 
 const projectList = ref<HTMLElement | null>(null);
 const items = ref<HTMLElement[]>([]);
 
 const projects = ref([
-	// 项目的列表
-	{
-		name: "Novel Web App (Mobile) – Coding ",
-		tags: [
-			{
-				type: "img",
-				alt: "RN",
-				value: "/img/react.png",
-			},
-			{
-				type: "img",
-				alt: "Expo",
-				value: "/img/expo.png",
-			},
-		],
+  // 项目的列表
+  {
+    name: "Novel Web App (Mobile) – Coding ",
+    tags: [
+      {
+        type: "img",
+        alt: "RN",
+        value: "/img/react.png",
+      },
+      {
+        type: "img",
+        alt: "Expo",
+        value: "/img/expo.png",
+      },
+    ],
     details: {
       description: " ",
       carouselImages: [
@@ -31,7 +31,7 @@ const projects = ref([
       ],
       links: []
     }
-	},
+  },
   {
     name: "Novel Web (Backend)– Coding",
     tags: [
@@ -70,42 +70,42 @@ const projects = ref([
       links: []
     }
   },
-	{
-		name: "Plush Shopping system (Full Stack)",
-		tags: [
+  {
+    name: "Plush Shopping system (Full Stack)",
+    tags: [
       {
         type: "url",
       },
-			{
-				type: "img",
-				alt: "Next.js",
-				value: "/img/nextjs.webp",
-			},
-			{
-				type: "img",
-				alt: "TS",
-				value: "/img/ts.svg",
-			},
       {
-				type: "img",
-				alt: "Tailwind",
-				value: "/img/tailwind.png",
-			},
+        type: "img",
+        alt: "Next.js",
+        value: "/img/nextjs.webp",
+      },
       {
-				type: "img",
-				alt: "Framer Motion",
-				value: "/img/fm.png",
-			},
+        type: "img",
+        alt: "TS",
+        value: "/img/ts.svg",
+      },
       {
-				type: "img",
-				alt: "PostgreSQL",
-				value: "/img/pgSQL.png",
-			},
+        type: "img",
+        alt: "Tailwind",
+        value: "/img/tailwind.png",
+      },
       {
-				type: "img",
-				alt: "Neon",
-				value: "/img/neon.png",
-			},
+        type: "img",
+        alt: "Framer Motion",
+        value: "/img/fm.png",
+      },
+      {
+        type: "img",
+        alt: "PostgreSQL",
+        value: "/img/pgSQL.png",
+      },
+      {
+        type: "img",
+        alt: "Neon",
+        value: "/img/neon.png",
+      },
       {
         type: "img",
         alt: "git",
@@ -116,7 +116,7 @@ const projects = ref([
         alt: "Vercel",
         value: "/img/Vercel.png",
       },
-		],
+    ],
     details: {
       description: `<h3>Project Overview</h3>
 <p>This project combines modern technologies and a serverless architecture for scalability and efficiency.</p>
@@ -144,28 +144,28 @@ const projects = ref([
         }
       ]
     }
-	},
-	{
-		name: "Personal Homepage (Frontend)[This Page]",
-		tags: [
-			{
-				type: "url",
-			},
-			{
-				type: "img",
-				alt: "Vue",
-				value: "/img/vue.png",
-			},
-			{
-				type: "img",
-				alt: "Vite",
-				value: "/img/vite.svg",
-			},
-			{
-				type: "img",
-				alt: "TS",
-				value: "/img/ts.svg",
-			},
+  },
+  {
+    name: "Personal Homepage (Frontend)[This Page]",
+    tags: [
+      {
+        type: "url",
+      },
+      {
+        type: "img",
+        alt: "Vue",
+        value: "/img/vue.png",
+      },
+      {
+        type: "img",
+        alt: "Vite",
+        value: "/img/vite.svg",
+      },
+      {
+        type: "img",
+        alt: "TS",
+        value: "/img/ts.svg",
+      },
       {
         type: "img",
         alt: "git",
@@ -176,7 +176,7 @@ const projects = ref([
         alt: "Vercel",
         value: "/img/Vercel.png",
       },
-		],
+    ],
     details: {
       description: `<h3>Project Overview</h3>
 <p>This homepage is built using Vue, Vite, TypeScript, and Three.js, with most components custom encapsulated by me. </p>
@@ -200,13 +200,13 @@ const projects = ref([
         url: "#prod"
       }]
     }
-	},
-	{
-		name: "Global News System (Frontend)",
-		tags: [
-			{
-				type: "url",
-			},
+  },
+  {
+    name: "Global News System (Frontend)",
+    tags: [
+      {
+        type: "url",
+      },
       {
         type: "img",
         alt: "React",
@@ -227,7 +227,7 @@ const projects = ref([
         alt: "Vercel",
         value: "/img/Vercel.png",
       },
-		],
+    ],
     details: {
       description: `
       <h3>Project Overview</h3>
@@ -253,7 +253,7 @@ const projects = ref([
         }
       ]
     }
-	},
+  },
   {
     name: "freeCodeCamp certification",
     tags: [
@@ -299,9 +299,9 @@ const projects = ref([
 type projectItems = {
   name: string;
   tags: (
-      | { type: string; value: string; alt?: undefined | string }
-      | { type: string; alt: string; value: string }
-      )[];
+    | { type: "img"; alt: string; value: string } // Image tags
+    | { type: "url"; value: string }            // URL tags
+  )[];
   details: {
     description: string;
     carouselImages: string[];
@@ -350,14 +350,8 @@ function openFullImage(imageUrl: string) {
     <PartTitle :title="titleAndPath[2].name" class="title-project" />
     <div class="index-project-list" ref="projectList">
       <div class="index-project-item-container">
-        <div
-            class="index-project-item"
-            v-for="(item, index) in projects"
-            :key="index"
-            ref="items"
-            @click="hasURL(item) && openDrawer(item)"
-            :style="hasURL(item) ? { cursor: 'pointer' } : {}"
-        >
+        <div class="index-project-item" v-for="(item, index) in projects" :key="index" ref="items"
+          @click="hasURL(item) && openDrawer(item)" :style="hasURL(item) ? { cursor: 'pointer' } : {}">
           <p class="project-name" :class="hasURL(item) ? 'project-name-click' : ''">
             {{ item.name }}
           </p>
@@ -372,26 +366,14 @@ function openFullImage(imageUrl: string) {
     </div>
 
     <!-- Drawer for project details -->
-    <el-drawer
-        v-model="drawerVisible"
-        :with-header="false"
-        :size="drawerSize"
-        :direction="direction"
-        style="background-color: var(--overall-background-color);opacity:0.95; color: var(--font-main-color);"
-    >
-        <template v-if="selectedProject">
+    <el-drawer v-model="drawerVisible" :with-header="false" :size="drawerSize" :direction="direction"
+      style="background-color: var(--overall-background-color);opacity:0.95; color: var(--font-main-color);">
+      <template v-if="selectedProject">
         <!-- 显示轮播图 -->
-        <el-carousel
-            :interval="5000"
-            arrow="always"
-            height="47vh"
-        >
-          <el-carousel-item
-              v-for="(image, index) in selectedProject.details.carouselImages"
-              :key="index"
-              class="el-carousel__item"
-          >
-            <img :src="image" alt="Project Image" class="carousel-img" @click="openFullImage(image)"/>
+        <el-carousel :interval="5000" arrow="always" height="47vh">
+          <el-carousel-item v-for="(image, index) in selectedProject.details.carouselImages" :key="index"
+            class="el-carousel__item">
+            <img :src="image" alt="Project Image" class="carousel-img" @click="openFullImage(image)" />
           </el-carousel-item>
         </el-carousel>
 
@@ -400,13 +382,8 @@ function openFullImage(imageUrl: string) {
 
         <!-- 显示相关链接 -->
         <div v-if="selectedProject.details.links?.length">
-          <a
-              v-for="(link, index) in selectedProject.details.links"
-              :key="index"
-              :href="link.url || '#'"
-              target="_blank"
-              class="project-link"
-          >
+          <a v-for="(link, index) in selectedProject.details.links" :key="index" :href="link.url || '#'" target="_blank"
+            class="project-link">
             {{ link.text }}
           </a>
         </div>
@@ -417,200 +394,212 @@ function openFullImage(imageUrl: string) {
 
 <style scoped>
 .index-project-container {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 90vh;
-	background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  background-color: transparent;
 }
 
 .index-project-list {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	opacity: 0;
-	width: 80vw;
-	height: 60vh;
-	border: 1px solid var(--color-box-shadow);
-	border-radius: 20px;
-	transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  width: 80vw;
+  height: 60vh;
+  border: 1px solid var(--color-box-shadow);
+  border-radius: 20px;
+  transition: all 0.4s;
 }
 
 .index-project-item-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: flex-start;
-	width: 70%;
-	height: 90%;
-	overflow-x: hidden;
-	overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: 70%;
+  height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .index-project-item {
-	opacity: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 8vh;
-	border-bottom: 1px solid var(--solid-color);
-	color: var(--font-main-color);
-	transition: all 0.2s;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 8vh;
+  border-bottom: 1px solid var(--solid-color);
+  color: var(--font-main-color);
+  transition: all 0.2s;
 }
 
 .index-project-item:hover {
-	color: var(--hover-color);
+  color: var(--hover-color);
 }
 
 .project-name {
-	padding-left: 0.5vw;
-	width: 50%;
-	font-size: max(1.1vw, 1rem);
-	font-weight: 600;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	user-select: none;
+  padding-left: 0.5vw;
+  width: 50%;
+  font-size: max(1.1vw, 1rem);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: none;
 }
 
 .project-name-click {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .project-tags {
-	width: 40%;
-	height: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .project-tag-img {
-	width: 24px;
-	height: 24px;
-	margin-left: 1vw;
+  width: 24px;
+  height: 24px;
+  margin-left: 1vw;
 }
 
 @keyframes show-up {
-	0% {
-		opacity: 0;
-		box-shadow: none;
-	}
+  0% {
+    opacity: 0;
+    box-shadow: none;
+  }
 
-	100% {
-		opacity: 1;
-		box-shadow: 0 0 3vh var(--color-box-shadow);
-	}
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 3vh var(--color-box-shadow);
+  }
 }
 
 .ani-show-up {
-	animation: show-up 1.3s ease-out 1 forwards;
+  animation: show-up 1.3s ease-out 1 forwards;
 }
 
 .project-tag-url {
-	width: 64px;
-	padding: 2px;
-	font-size: 16px;
-	border: 1px solid var(--hover-color);
-	color: var(--hover-color);
-	font-weight: 300;
-	text-align: center;
-	cursor: pointer;
-	transition: all 0.2s;
+  width: 64px;
+  padding: 2px;
+  font-size: 16px;
+  border: 1px solid var(--hover-color);
+  color: var(--hover-color);
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .project-tag-url:hover {
-	background-color: var(--hover-color);
-	color: var(--overall-background-color);
+  background-color: var(--hover-color);
+  color: var(--overall-background-color);
 }
 
 /* 进入的动画 */
 @keyframes item-in {
-	0% {
-		opacity: 0;
-		transform: translate(4vw, -4vh);
-	}
+  0% {
+    opacity: 0;
+    transform: translate(4vw, -4vh);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translate(0, 0);
-	}
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 
 @keyframes ftc {
-	0%,
-	100% {
-		color: var(--hover-color);
-	}
 
-	50% {
-		color: var(--font-main-color);
-	}
+  0%,
+  100% {
+    color: var(--hover-color);
+  }
+
+  50% {
+    color: var(--font-main-color);
+  }
 }
 
 .setp-in-ani {
-	animation: item-in 1s ease-out 1 forwards;
+  animation: item-in 1s ease-out 1 forwards;
 }
 
 @media screen and (max-width: 768px) {
-	/* 768更改展示形态 */
-	.title-project::before {
-		content: "";
-		position: absolute;
-		left: -2vh;
-		width: 8%;
-		height: 100%;
-		background-color: var(--scroll-block-color);
-	}
 
-	.project-tag-img {
-		width: 16px;
-		height: 16px;
-	}
+  /* 768更改展示形态 */
+  .title-project::before {
+    content: "";
+    position: absolute;
+    left: -2vh;
+    width: 8%;
+    height: 100%;
+    background-color: var(--scroll-block-color);
+  }
 
-	/* .project-tag-icon{
+  .project-tag-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* .project-tag-icon{
       font-size: 16px;
     } */
 
-	.project-tag-url {
-		width: 48px;
-		font-size: 14px;
-	}
+  .project-tag-url {
+    width: 48px;
+    font-size: 14px;
+  }
 
-	.index-project-list {
-		width: 90vw;
-	}
+  .index-project-list {
+    width: 90vw;
+  }
 }
 
 @media screen and (max-width: 530px) {
-	.project-tags {
-		display: none;
-	}
+  .project-tags {
+    display: none;
+  }
 
-	.project-name {
-		width: 100%;
-	}
+  .project-name {
+    width: 100%;
+  }
 
-	.project-name-click {
-		animation: ftc 5s ease-in-out infinite;
-	}
+  .project-name-click {
+    animation: ftc 5s ease-in-out infinite;
+  }
 }
+
 .carousel-img {
-  display: block;            /* 确保图片为块级元素 */
-  margin: auto;             /* 自动水平居中 */
-  max-width: 100%;          /* 不超过容器的宽度 */
-  max-height: 100%;         /* 不超过容器的高度 */
-  object-fit: contain;      /* 保持宽高比 */
+  display: block;
+  /* 确保图片为块级元素 */
+  margin: auto;
+  /* 自动水平居中 */
+  max-width: 100%;
+  /* 不超过容器的宽度 */
+  max-height: 100%;
+  /* 不超过容器的高度 */
+  object-fit: contain;
+  /* 保持宽高比 */
 }
 
 .el-carousel__item {
-  display: flex;            /* 使用 flex 布局 */
-  justify-content: center;  /* 水平居中 */
-  align-items: center;      /* 垂直居中 */
-  height: 100%;             /* 占满父容器的高度 */
+  display: flex;
+  /* 使用 flex 布局 */
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  height: 100%;
+  /* 占满父容器的高度 */
 }
 
 .project-description {
@@ -618,6 +607,7 @@ function openFullImage(imageUrl: string) {
   margin-left: 1em;
   font-size: 1em;
 }
+
 .project-link {
   display: block;
   margin-top: 1em;
