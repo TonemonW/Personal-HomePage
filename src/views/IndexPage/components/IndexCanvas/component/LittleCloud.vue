@@ -31,11 +31,7 @@ onUnmounted(() => {
 	<div class="container">
 		<div class="loader">
 			<div class="snow">
-				<span
-					v-for="(item, index) in snowArr"
-					:style="{ '--i': item }"
-					:key="index"
-				></span>
+				<span v-for="(item, index) in snowArr" :style="{ '--i': item }" :key="index"></span>
 			</div>
 		</div>
 	</div>
@@ -52,23 +48,25 @@ onUnmounted(() => {
 }
 
 @keyframes loader-entrance {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 
 .loader {
-  position: relative;
-  width: 220px;
-  height: 60px;
-  border-radius: 200px;
-  background-color: var(--font-main-color);
-  animation: loader-entrance 1.2s ease-out forwards; /* 增加入场动画 */
+	position: relative;
+	width: 220px;
+	height: 60px;
+	border-radius: 200px;
+	background-color: var(--font-main-color);
+	animation: loader-entrance 1.2s ease-out forwards;
+	/* 增加入场动画 */
 }
 
 .loader::before {
@@ -96,10 +94,12 @@ onUnmounted(() => {
 	0% {
 		transform: translateY(0);
 	}
+
 	70% {
 		/* 稍微一停再消失 */
 		transform: translateY(150px) scale(1);
 	}
+
 	100% {
 		/* 下落过程中雪花大小逐步变为0 */
 		transform: translateY(150px) scale(0);
@@ -123,6 +123,7 @@ onUnmounted(() => {
 		width: 110px;
 		height: 30px;
 	}
+
 	.loader::before {
 		width: 30px;
 		height: 30px;

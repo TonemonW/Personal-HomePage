@@ -26,7 +26,8 @@ const toggleAnimation = () => {
         <a href="https://github.com/TonemonW" target="_blank" rel="noopener noreferrer" class="social-icon">
           <i class="fab fa-github fa-2x"></i>
         </a>
-        <a href="https://www.linkedin.com/in/tong-wu-0276b720b" target="_blank" rel="noopener noreferrer" class="social-icon">
+        <a href="https://www.linkedin.com/in/tong-wu-0276b720b" target="_blank" rel="noopener noreferrer"
+          class="social-icon">
           <i class="fab fa-linkedin fa-2x"></i>
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon">
@@ -53,6 +54,7 @@ const toggleAnimation = () => {
     opacity: 0;
     transform: translateY(-3vh);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -94,6 +96,7 @@ const toggleAnimation = () => {
 .cloud-container {
   cursor: pointer;
   overflow: hidden;
+  display: flex;
 }
 
 .main-text {
@@ -102,7 +105,7 @@ const toggleAnimation = () => {
 
 .my-name {
   font-weight: bold;
-  background: linear-gradient(to right, var(--hover-color),#b0b0b0);
+  background: linear-gradient(to right, var(--hover-color), #b0b0b0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -134,16 +137,21 @@ const toggleAnimation = () => {
   .index-start-btn {
     display: none;
   }
+
   .text-container {
     width: 60vw;
-    height: 40vh; /* 高度变为一半 */
+    height: 40vh;
+    margin-left: 0;
+    /* 高度变为一半 */
   }
+
   .cloud-container {
     width: 80vw;
     height: 65vh;
-    transform: translateY(-16vh)
+    transform: translate(5vw, -16vh)
   }
-  .main-text{
+
+  .main-text {
     font-size: max(3vw, 2rem);
   }
 }
@@ -151,12 +159,15 @@ const toggleAnimation = () => {
 .social-links {
   margin: 1vh;
   display: flex;
-  gap: 20px; /* 链接之间的间距 */
+  gap: 20px;
+  /* 链接之间的间距 */
 }
 
 .social-icon {
-  color: #4A5568; /* 默认灰色 */
-  transition: color 0.3s ease; /* 添加平滑过渡 */
+  color: #4A5568;
+  /* 默认灰色 */
+  transition: color 0.3s ease;
+  /* 添加平滑过渡 */
 }
 
 .social-icon:hover {
