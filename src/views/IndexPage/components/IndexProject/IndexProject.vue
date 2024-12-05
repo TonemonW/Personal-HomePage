@@ -7,7 +7,7 @@ import { ref } from "vue";
 const projectList = ref<HTMLElement | null>(null);
 const items = ref<HTMLElement[]>([]);
 
-const projects = ref([
+const projects = ref<projectItems[]>([
   // 项目的列表
   {
     name: "Novel Web App (Mobile) – Coding ",
