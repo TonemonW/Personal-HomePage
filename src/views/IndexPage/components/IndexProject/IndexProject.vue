@@ -10,31 +10,18 @@ const items = ref<HTMLElement[]>([]);
 const projects = ref<projectItems[]>([
   // 项目的列表
   {
-    name: "Novel Web App (Mobile) – Coding ",
+    name: "Novel Pavilion (In Progress)",
     tags: [
       {
         type: "img",
-        alt: "RN",
-        value: "/img/react.png",
+        alt: "React Native",
+        value: "/img/react.png", 
       },
       {
         type: "img",
         alt: "Expo",
         value: "/img/expo.png",
       },
-    ],
-    details: {
-      description: " ",
-      carouselImages: [
-        "/img/smartCampus1.png",
-        "/img/smartCampus2.png"
-      ],
-      links: []
-    }
-  },
-  {
-    name: "Novel Web (Backend)– Coding",
-    tags: [
       {
         type: "img",
         alt: "Node.js",
@@ -62,7 +49,14 @@ const projects = ref<projectItems[]>([
       },
     ],
     details: {
-      description: "",
+      description: `<h3>Project Overview</h3>
+<p>This project leverages a modern tech stack and modular architecture, utilizing containerization and load balancing to deliver a highly scalable and efficient backend service.</p>
+
+<ul> 
+<li><strong>Node.js and Express</strong>: Built a high-performance backend using Node.js, with Express providing a fast and flexible framework for API development.</li> <li><strong>MySQL and Sequelize</strong>: Utilized Sequelize ORM for database modeling and migrations, simplifying complex query logic. MySQL ensured reliable data storage, with optimized indexing strategies to enhance query performance.</li> 
+<li><strong>Docker Containerization</strong>: Containerized backend services with Docker to ensure environment consistency, streamline deployments, and facilitate CI/CD workflows.</li> 
+<li><strong>Nginx Load Balancing</strong>: Implemented Nginx for reverse proxying and load balancing, enhancing the system's ability to handle high concurrency and maintain stability.</li> 
+<li><strong>Redis Caching</strong>: Employed Redis for session storage and data caching, accelerating access to frequently requested data and reducing database load.</li> </ul>`,
       carouselImages: [
         "/img/smartCampus1.png",
         "/img/smartCampus2.png"
@@ -71,7 +65,7 @@ const projects = ref<projectItems[]>([
     }
   },
   {
-    name: "Plush Shopping system (Full Stack)",
+    name: "XTreasures",
     tags: [
       {
         type: "url",
@@ -119,34 +113,78 @@ const projects = ref<projectItems[]>([
     ],
     details: {
       description: `<h3>Project Overview</h3>
-<p>This project combines modern technologies and a serverless architecture for scalability and efficiency.</p>
-
+<p>A high-performance e-commerce platform leveraging Next.js for server-side rendering (SSR) to enhance SEO & loading speed.</p>
 <ul>
-  <li><strong>Tailwind CSS and Shadcn</strong>: Tailwind CSS ensured responsive design, while Shadcn streamlined component usage. Utility class optimization prevented style bloat.</li>
-  <li><strong>Neon + pgSQL with Drizzle ORM</strong>: Neon provided a serverless PostgreSQL database with low latency, while Drizzle ORM simplified schema management and migrations. Connection pooling issues and data transition challenges were resolved using Neon’s built-in pooling and custom migration scripts tested in staging.</li>
-  <li><strong>OAuth</strong>: Seamless user authentication with multiple providers, leveraging NextAuth.js for consistent integration and robust error handling.</li>
-  <li><strong>Stripe</strong>: Reliable payment processing with sandbox testing and retry mechanisms for webhooks.</li>
+  <li>Implemented SSR & CSR strategies in Next.js, improving SEO visibility by 40% and reducing first contentful paint (FCP) by 30%.</li>
+  <li>Designed scalable database schemas with Drizzle ORM & Neon PostgreSQL, optimizing query performance.</li>
+  <li>Integrated Stripe for secure payments, ensuring</li>
+  <li>Built a robust authentication system with NextAuth.js, enhancing security & user experience.</li>
+  <li>Optimized frontend performance by reducing CSS processing time by 30% using Tailwind JIT, PurgeCSS, and code-splitting techniques.</li>
 </ul>`,
       carouselImages: [
-        "/img/PlushShopping/1.png",
-        "/img/PlushShopping/2.png",
+        "/img/PlushShopping/1.jpg",
+        "/img/PlushShopping/2.jpg",
         "/img/PlushShopping/3.png",
-        "/img/PlushShopping/4.png",
-        "/img/PlushShopping/5.png",
+        "/img/PlushShopping/4.jpg",
+        "/img/PlushShopping/5.jpg",
         "/img/PlushShopping/6.png",
         "/img/PlushShopping/7.png",
-        "/img/PlushShopping/8.png",
       ],
       links: [
         {
           text: "View Project",
-          url: "https://shopping-system-alpha.vercel.app/"
+          url: "https://www.xtreasures.shop/"
         }
       ]
     }
   },
   {
-    name: "Personal Homepage (Frontend)[This Page]",
+    name: "House of Carnivore",
+    tags: [
+      {
+        type: "url",
+      },
+      {
+        type: "img",
+        alt: "HTML",
+        value: "/img/H5.png",
+      },
+      {
+        type: "img",
+        alt: "CSS",
+        value: "/img/css3.png",
+      },
+      {
+        type: "img",
+        alt: "JavaScript",
+        value: "/img/JS.png",
+      },
+    ],
+    details: {
+      description: `<h3>Project Overview</h3>
+<p>Developed and maintained static websites for the company and its subsidiaries, ensuring smooth operation and regular product updates.</p>
+<ul>
+  <li>Built high-performance static sites with modern front-end technologies.</li>
+  <li>Optimized website maintenance workflows, reducing update time.</li>
+  <li>Improved SEO & accessibility through structured content & semantic HTML</li>`,
+      carouselImages: [
+        "/img/hoc/1.jpg",
+        "/img/hoc/2.jpg"
+      ],
+      links: [
+        {
+          text: "House of Carnivore",
+          url: "https://houseofcarnivore.com/"
+        },
+        {
+          text: "HOC logistics",
+          url: "https://hoclogistics.com.au/"
+        }
+      ]
+    }
+  },
+  {
+    name: "Personal Homepage [This Page]",
     tags: [
       {
         type: "url",
@@ -179,12 +217,12 @@ const projects = ref<projectItems[]>([
     ],
     details: {
       description: `<h3>Project Overview</h3>
-<p>This homepage is built using Vue, Vite, TypeScript, and Three.js, with most components custom encapsulated by me. </p>
+<p>A personal portfolio website showcasing projects & work experience, incorporating 3D models & SVG illustrations for an engaging user experience.</p>
 
 <ul>
-  <li><strong>Component Encapsulation</strong>: Custom components enhance code reusability and simplify the overall architecture.</li>
-  <li><strong>3D Rendering</strong>: The second-layer encapsulation of Three.js optimizes the loading and display of 3D models.</li>
-  <li><strong>SVG Animations</strong>: SVG animations are used to enhance interactivity and visual appeal.</li>
+  <li>Built an optimized frontend with Vue & Vite, achieving faster build times & better performance.</li>
+  <li>Integrated interactive 3D elements, enhancing UX without compromising load speed.</li>
+  <li>Reduced asset load times through lazy loading & modern image optimization techniques.</li>
 </ul>
 
 `,
@@ -202,7 +240,7 @@ const projects = ref<projectItems[]>([
     }
   },
   {
-    name: "Global News System (Frontend)",
+    name: "Global News System",
     tags: [
       {
         type: "url",
@@ -231,13 +269,12 @@ const projects = ref<projectItems[]>([
     details: {
       description: `
       <h3>Project Overview</h3>
-<p>This global news system, built with React and JSON Server, tackled key challenges with tailored solutions:</p>
+<p>A responsive news management platform with user authentication, permission control, & real-time news editing.</p>
 <ul>
-  <li><strong>State Management</strong>: Used Redux for seamless state handling across pages, including async actions.</li>
-  <li><strong>Data Visualization</strong>: ECharts displayed key metrics with lazy loading to enhance performance.</li>
-  <li><strong>Mock Backend</strong>: JSON Server simulated APIs, with Axios for stable requests and error handling.</li>
-  <li><strong>Access Control</strong>: Role-based permissions secured access to sensitive data.</li>
-  <li><strong>UI Design</strong>: Ant Design provided a clean, responsive layout for a better user experience.</li>
+  <li>Implemented state management using Redux, ensuring efficient data handling.</li>
+  <li>Optimized API communication with Axios, enhancing RESTful data fetching.</li>
+  <li>Designed a dynamic routing system with React-Router, improving content navigation.</li>
+  <li>Built a fully responsive UI, ensuring seamless experience across all devices.</li>
 </ul>
 
 `,
