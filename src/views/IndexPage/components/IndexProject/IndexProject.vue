@@ -10,7 +10,7 @@ const items = ref<HTMLElement[]>([]);
 const projects = ref<projectItems[]>([
   // 项目的列表
   {
-    name: "Novel Pavilion (In Progress)",
+    name: "Novel Pavilion",
     tags: [
       {
         type: "img",
