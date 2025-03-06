@@ -26,7 +26,7 @@ const practices = ref<{
 		imgPath: "/img/hoc.jpg",
 		imgAlt: "House Of Carnivore Logo",
 		companyName: "House Of Carnivore",
-		jobName: "Food Technologist/Production Supervisor",
+		jobName: "Web Developer/Production Supervisor",
 		time: "2022-2 ~ 2024-12",
 		show: true,
 	},

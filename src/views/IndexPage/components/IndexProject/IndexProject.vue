@@ -10,8 +10,74 @@ const items = ref<HTMLElement[]>([]);
 const projects = ref<projectItems[]>([
   // 项目的列表
   {
+    name: "XTreasures",
+    tags: [
+      {
+        type: "url",
+      },
+      {
+        type: "img",
+        alt: "Next.js",
+        value: "/img/nextjs.webp",
+      },
+      {
+        type: "img",
+        alt: "TS",
+        value: "/img/ts.svg",
+      },
+      {
+        type: "img",
+        alt: "Tailwind",
+        value: "/img/tailwind.png",
+      },
+      {
+        type: "img",
+        alt: "PostgreSQL",
+        value: "/img/pgSQL.png",
+      },
+      {
+        type: "img",
+        alt: "git",
+        value: "/img/git.svg",
+      },
+      {
+        type: "img",
+        alt: "AWS",
+        value: "/img/AWS.png",
+      },
+    ],
+    details: {
+      description: `<h3>Project Overview</h3>
+<p>An e-commerce platform built with Next.js, with both the frontend and backend hosted on AWS Elastic Beanstalk.</p>
+<ul>
+  <li>Developed a dynamic web application using TypeScript, React (Next.js), RESTful API</li>
+  <li>Implemented ISR & CSR strategies in Next.js, optimizing SEO visibility and improving performance by reducing FCP and LCP times.</li>
+  <li>Designed and implemented web UI using React components, integrating ShadCN and Tailwind CSS transitions for smooth UI interactions.</li>
+  <li>Analyzed customer requirements and translated to technical docs, implemented using Node.js, refactored legacy code.</li>
+</ul>`,
+      carouselImages: [
+        "/img/PlushShopping/1.jpg",
+        "/img/PlushShopping/2.jpg",
+        "/img/PlushShopping/3.png",
+        "/img/PlushShopping/4.jpg",
+        "/img/PlushShopping/5.jpg",
+        "/img/PlushShopping/6.png",
+        "/img/PlushShopping/7.png",
+      ],
+      links: [
+        {
+          text: "View Project",
+          url: "https://www.xtreasures.shop/"
+        }
+      ]
+    }
+  },
+  {
     name: "Novel Pavilion",
     tags: [
+      {
+        type: "url",
+      },
       {
         type: "img",
         alt: "React Native",
@@ -47,95 +113,28 @@ const projects = ref<projectItems[]>([
         alt: "JavaScript",
         value: "/img/JS.png",
       },
+      {
+        type: "img",
+        alt: "AWS",
+        value: "/img/AWS.png",
+      },
     ],
     details: {
       description: `<h3>Project Overview</h3>
-<p>This project leverages a modern tech stack and modular architecture, utilizing containerization and load balancing to deliver a highly scalable and efficient backend service.</p>
+<p>A mobile reading platform built with React Native & Expo, featuring a backend powered by Node.js and Express</p>
 
 <ul> 
-<li><strong>Node.js and Express</strong>: Built a high-performance backend using Node.js, with Express providing a fast and flexible framework for API development.</li> <li><strong>MySQL and Sequelize</strong>: Utilized Sequelize ORM for database modeling and migrations, simplifying complex query logic. MySQL ensured reliable data storage, with optimized indexing strategies to enhance query performance.</li> 
-<li><strong>Docker Containerization</strong>: Containerized backend services with Docker to ensure environment consistency, streamline deployments, and facilitate CI/CD workflows.</li> 
-<li><strong>Nginx Load Balancing</strong>: Implemented Nginx for reverse proxying and load balancing, enhancing the system's ability to handle high concurrency and maintain stability.</li> 
-<li><strong>Redis Caching</strong>: Employed Redis for session storage and data caching, accelerating access to frequently requested data and reducing database load.</li> </ul>`,
+<li>Technologies: JavaScript, React Native, Node.js, MySQL, Sequelize, RESTful API, AWS EC2, AWS S3</li> 
+<li>Developed mobile apps with React Native & Expo, ensuring consistent performance on iOS and Android.</li> 
+<li>Deployed the backend on AWS EC2, using Nginx and PM2 for process management and scalability.</li> 
+<li>Implemented RESTful APIs using Node.js & Express.js for smooth front-end and back-end data interaction.</li>
+<li>Integrated Amazon S3 for storing book covers and other media files, reducing database load and improving asset retrieval speed.</li>
+<li>Troubleshot production incidents on EC2 instances and released patches to maintain system stability.</li> </ul>`,
       carouselImages: [
         "/img/smartCampus1.png",
         "/img/smartCampus2.png"
       ],
       links: []
-    }
-  },
-  {
-    name: "XTreasures",
-    tags: [
-      {
-        type: "url",
-      },
-      {
-        type: "img",
-        alt: "Next.js",
-        value: "/img/nextjs.webp",
-      },
-      {
-        type: "img",
-        alt: "TS",
-        value: "/img/ts.svg",
-      },
-      {
-        type: "img",
-        alt: "Tailwind",
-        value: "/img/tailwind.png",
-      },
-      {
-        type: "img",
-        alt: "Framer Motion",
-        value: "/img/fm.png",
-      },
-      {
-        type: "img",
-        alt: "PostgreSQL",
-        value: "/img/pgSQL.png",
-      },
-      {
-        type: "img",
-        alt: "Neon",
-        value: "/img/neon.png",
-      },
-      {
-        type: "img",
-        alt: "git",
-        value: "/img/git.svg",
-      },
-      {
-        type: "img",
-        alt: "Vercel",
-        value: "/img/Vercel.png",
-      },
-    ],
-    details: {
-      description: `<h3>Project Overview</h3>
-<p>A high-performance e-commerce platform leveraging Next.js for server-side rendering (SSR) to enhance SEO & loading speed.</p>
-<ul>
-  <li>Implemented SSR & CSR strategies in Next.js, improving SEO visibility by 40% and reducing first contentful paint (FCP) by 30%.</li>
-  <li>Designed scalable database schemas with Drizzle ORM & Neon PostgreSQL, optimizing query performance.</li>
-  <li>Integrated Stripe for secure payments, ensuring</li>
-  <li>Built a robust authentication system with NextAuth.js, enhancing security & user experience.</li>
-  <li>Optimized frontend performance by reducing CSS processing time by 30% using Tailwind JIT, PurgeCSS, and code-splitting techniques.</li>
-</ul>`,
-      carouselImages: [
-        "/img/PlushShopping/1.jpg",
-        "/img/PlushShopping/2.jpg",
-        "/img/PlushShopping/3.png",
-        "/img/PlushShopping/4.jpg",
-        "/img/PlushShopping/5.jpg",
-        "/img/PlushShopping/6.png",
-        "/img/PlushShopping/7.png",
-      ],
-      links: [
-        {
-          text: "View Project",
-          url: "https://www.xtreasures.shop/"
-        }
-      ]
     }
   },
   {
@@ -159,14 +158,19 @@ const projects = ref<projectItems[]>([
         alt: "JavaScript",
         value: "/img/JS.png",
       },
+      {
+        type: "img",
+        alt: "Wordpress",
+        value: "/img/Wordpress.png",
+      },
     ],
     details: {
       description: `<h3>Project Overview</h3>
-<p>Developed and maintained static websites for the company and its subsidiaries, ensuring smooth operation and regular product updates.</p>
+<p>Web system for the company, and company portal using WordPress CMS</p>
 <ul>
-  <li>Built high-performance static sites with modern front-end technologies.</li>
-  <li>Optimized website maintenance workflows, reducing update time.</li>
-  <li>Improved SEO & accessibility through structured content & semantic HTML</li>`,
+  <li>Developed WordPress plugins to enhance company website functionality.</li>
+  <li>Collaborated closely with designers and implemented design system (React components), also using CSS transitions for UI interactions.</li>
+  <li>Improved SEO & accessibility through structured content & semantic HTML5</li>`,
       carouselImages: [
         "/img/hoc/1.jpg",
         "/img/hoc/2.jpg"
@@ -287,46 +291,6 @@ const projects = ref<projectItems[]>([
         {
           text: "View Project",
           url: "https://react-news-system.vercel.app/#/login"
-        }
-      ]
-    }
-  },
-  {
-    name: "freeCodeCamp certification",
-    tags: [
-      {
-        type: "url",
-      },
-      {
-        type: "img",
-        alt: "HTML",
-        value: "/img/H5.png",
-      },
-      {
-        type: "img",
-        alt: "CSS",
-        value: "/img/css3.png",
-      },
-      {
-        type: "img",
-        alt: "JavaScript",
-        value: "/img/JS.png",
-      },
-    ],
-    details: {
-      description: ``,
-      carouselImages: [
-        "/img/certification/RWB.png",
-        "/img/certification/JADS.png"
-      ],
-      links: [
-        {
-          text: "Responsive Web Design Certification",
-          url: "https://www.freecodecamp.org/certification/Tongw/responsive-web-design"
-        },
-        {
-          text: "JavaScript Algorithms and Data Structures Certification",
-          url: "https://www.freecodecamp.org/certification/Tongw/javascript-algorithms-and-data-structures-v8"
         }
       ]
     }

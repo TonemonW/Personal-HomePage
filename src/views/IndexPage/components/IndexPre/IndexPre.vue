@@ -52,19 +52,9 @@ const pres1 = ref([
 		alt: "React",
 	},
   {
-    name: "Vite",
-    src: "/img/vite.svg",
-    alt: "HTML5",
-  },
-  {
     name: "Next.js",
     src: "/img/nextjs.webp",
     alt: "Next.js",
-  },
-  {
-    name: "Framer Motion",
-    src: "/img/fm.png",
-    alt: "Framer Motion",
   },
   {
     name: "Tailwind",
@@ -72,14 +62,19 @@ const pres1 = ref([
     alt: "Tailwind",
   },
   {
-    name: "React Native (learning...)",
+    name: "React Native",
     src: "/img/react.png",
     alt: "React Native",
   },
   {
-    name: "Expo (learning...)",
+    name: "Expo",
     src: "/img/expo.png",
-    alt: "Expo",
+    alt: "EXpo",
+  },
+  {
+    name: "Wordpress",
+    src: "/img/Wordpress.png",
+    alt: "Wordpress",
   },
 ]);
 
@@ -106,9 +101,9 @@ const pres2 = ref([
 		alt: "pgSQL",
 	},
   {
-		name: "Neon.js",
-		src: "/img/neon.png",
-		alt: "Neon.js",
+		name: "Vite",
+		src: "/img/vite.svg",
+		alt: "Vite",
 	},
   {
     name: "Git",
@@ -125,7 +120,11 @@ const pres2 = ref([
     src: "/img/docker.png",
     alt: "Docker",
   },
-
+  {
+    name: "AWS",
+    src: "/img/AWS.png",
+    alt: "AWS",
+  },
 ]);
 </script>
 
