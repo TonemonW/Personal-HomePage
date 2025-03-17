@@ -15,19 +15,19 @@ const practices = ref<{
 	show: boolean;
 }[]>([
 	{
-		imgPath: "/img/knk.jpg",
-		imgAlt: "KNK Dessert Logo",
-		companyName: "KNK Dessert",
-		jobName: "Food Production Manager",
-		time: "2019-3 ~ 2021-10",
-		show: true,
-	},
-	{
 		imgPath: "/img/hoc.jpg",
 		imgAlt: "House Of Carnivore Logo",
 		companyName: "House Of Carnivore",
 		jobName: "Web Developer/Production Supervisor",
-		time: "2022-2 ~ 2024-12",
+		time: "2022-2 ~ 2024-8",
+		show: true,
+	},
+	{
+		imgPath: "/img/x-logo-c.png",
+		imgAlt: "XTreasures Logo",
+		companyName: "XTreasures ",
+		jobName: "Developer",
+		time: "2024-8 ~ 2024-12",
 		show: true,
 	},
 ]);
